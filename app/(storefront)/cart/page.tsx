@@ -8,11 +8,13 @@ import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+
+
 export default async function CartRoute() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user) {
+  if (!user.id) {
     redirect("/");
   }
 
