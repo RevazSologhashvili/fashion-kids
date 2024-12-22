@@ -72,7 +72,7 @@ async function getData(productCategory: string) {
 export default async function CategoriesPage({
   params,
 }: {
-  params: { name: string };
+  params: { name: string } | Promise<{ name: string }>
 }) {
     const resolvedParams = await params; 
   const { name } =  resolvedParams;

@@ -18,7 +18,7 @@ async function getData(productId: string) {
 export default async function EditRoute({
   params,
 }: {
-  params: { id: string };
+  params: { id: string } | Promise<{ id: string }>
 }) {
 
   const resolvedParams = await params; 

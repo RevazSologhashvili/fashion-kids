@@ -13,7 +13,7 @@ import Link from "next/link";
 export default async function DeleteBannerRoute({
   params,
 }: {
-  params: { id: string };
+  params: { id: string } | Promise<{ id: string }>
 }) {
 
   const resolvedParams = await params; 
