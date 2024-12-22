@@ -14,8 +14,11 @@ export default async function CartRoute() {
   
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-console.log(user);
+  console.log("User object:", user);
+  console.log("User ID:", user?.id);
+
   if (!user) {
+    console.log("No user found, redirecting to /");
     redirect("/");
   }
 
@@ -26,6 +29,7 @@ console.log(user);
   cart?.items.forEach((item) => {
     totalPrice += item.price * item.quantity;
   });
+
   return (
     <div className="max-w-2xl mx-auto mt-10 min-h-[55vh]">
       {!cart || !cart.items? (
