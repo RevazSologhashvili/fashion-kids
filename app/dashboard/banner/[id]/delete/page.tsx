@@ -1,5 +1,5 @@
 import { deleteBanner } from "@/app/actions";
-import {SubmitButtons} from "@/app/components/SubmitButtons";
+import { SubmitButtons } from "@/app/components/SubmitButtons";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -31,7 +31,7 @@ export default async function DeleteBannerRoute({
           </Button>
           <form action={deleteBanner}>
             <input type="hidden" name="bannerId" value={id} />
-            <SubmitButtons text='Permanently Delete' variant={'destructive'}/>
+            <SubmitButtons text="Permanently Delete" variant={"destructive"} />
           </form>
         </CardFooter>
       </Card>
