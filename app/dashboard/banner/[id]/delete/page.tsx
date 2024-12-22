@@ -15,7 +15,11 @@ export default async function DeleteBannerRoute({
 }: {
   params: { id: string };
 }) {
-  const { id } = await params;
+
+  const resolvedParams = await params; 
+
+  const { id } = resolvedParams;
+
   return (
     <div className="h-[80vh] w-full flex items-center justify-center">
       <Card className="max-w-xl">

@@ -74,7 +74,8 @@ export default async function CategoriesPage({
 }: {
   params: { name: string };
 }) {
-  const { name } = await params;
+    const resolvedParams = await params; 
+  const { name } =  resolvedParams;
   const { data, title } = await getData(name);
 
   return (

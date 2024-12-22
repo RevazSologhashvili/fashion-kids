@@ -32,7 +32,11 @@ export default async function ProductIdRoute({
 }: {
   params: { id: string };
 }) {
-  const { id } = await params;
+  
+  const resolvedParams = await params;  
+
+  
+  const { id } = resolvedParams;
 
   const data = await getData(id);
 
