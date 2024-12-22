@@ -11,12 +11,10 @@ import {
 import Link from "next/link";
 
 
-export default async function DeleteBannerRoute({
-  params,
-}: {
-  params: { id: string } 
-}) {
-  const { id } = params;
+type Params = Promise<{ id: string }>
+
+export default async function DeleteBannerRoute({  params,}: {  params: Params}) {
+  const { id } = await params;
 
   return (
     <div className="h-[80vh] w-full flex items-center justify-center">

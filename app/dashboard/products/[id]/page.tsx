@@ -15,12 +15,11 @@ async function getData(productId: string) {
   return data;
 }
 
-export default async function EditRoute({
-  params,
-}: {
-  params: { id: string } 
-}) {
-  const { id } = params;
+type Params = Promise<{ id: string }>
+
+export default async function EditRoute({  params,}: {  params: Params}) {
+  const { id } = await params;
+
 
   const data = await getData(id);
 
