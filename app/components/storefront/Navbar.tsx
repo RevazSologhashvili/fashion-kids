@@ -8,13 +8,22 @@ import { redis } from "@/app/lib/redis";
 import { Cart } from "@/app/lib/interfaces";
 
 export async function Navbar() {
-  const { getUser } = getKindeServerSession();
+  let user = null;
+  let cart:Cart | null = null;
+  let total = 0;
 
-  const user = await getUser();
-
-  const cart: Cart | null = user ? await redis.get(`cart-${user.id}`) : null;
-
-  const total = cart?.items.reduce((sum, item) => sum + item.quantity, 0) || 0;
+  try {
+    const { getUser } = getKindeServerSession();
+    user = await getUser();
+    
+    if (user?.id) {
+      cart = await redis.get(`cart-${user.id}`);
+      total = cart?.items?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    }
+  } catch (error) {
+    console.error('Navbar error:', error);
+    // Don't throw the error - let the navbar render without cart data
+  }
 
   return (
     <div className="border-b">

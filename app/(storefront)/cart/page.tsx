@@ -11,25 +11,37 @@ import { redirect } from "next/navigation";
 
 
 export default async function CartRoute() {
-  
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
-  console.log("User object:", user);
-  console.log("User ID:", user?.id);
 
-  if (!user) {
-    console.log("No user found, redirecting to /");
+   let user = null;
+   let cart:Cart | null = null;
+
+  try {
+    const { getUser } = getKindeServerSession();
+    console.log("Got session");
+    
+     user = await getUser();
+    console.log("User result:", user);
+
+    if (!user) {
+      console.log("No user found, redirecting");
+      redirect("/");
+    }
+
+    // Rest of your code...
+    
+  } catch (error) {
+    console.error("Error in cart route:", error);
     redirect("/");
   }
 
-  const cart: Cart | null = await redis.get(`cart-${user.id}`);
+
+   cart = await redis.get(`cart-${user.id}`);
 
   let totalPrice: number = 0;
 
   cart?.items.forEach((item) => {
     totalPrice += item.price * item.quantity;
   });
-
   return (
     <div className="max-w-2xl mx-auto mt-10 min-h-[55vh]">
       {!cart || !cart.items? (
