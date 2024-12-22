@@ -12,14 +12,12 @@ import { redirect } from "next/navigation";
 
 export default async function CartRoute() {
 
-   let user = null;
-   let cart:Cart | null = null;
 
-  try {
     const { getUser } = getKindeServerSession();
     console.log("Got session");
     
-     user = await getUser();
+    const user = await getUser();
+    
     console.log("User result:", user);
 
     if (!user) {
@@ -27,15 +25,10 @@ export default async function CartRoute() {
       redirect("/");
     }
 
-    // Rest of your code...
     
-  } catch (error) {
-    console.error("Error in cart route:", error);
-    redirect("/");
-  }
 
 
-   cart = await redis.get(`cart-${user.id}`);
+  const cart:Cart | null  = await redis.get(`cart-${user.id}`);
 
   let totalPrice: number = 0;
 
