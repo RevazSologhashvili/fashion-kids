@@ -27,12 +27,8 @@ async function getData(productId: string) {
   return data;
 }
 
-export default async function ProductIdRoute({
-  // @ts-ignore
-  params,
-}: {
-  params: { id: string } | Promise<{ id: string }>
-}) {
+// eslint-disable-next-line
+export default async function ProductIdRoute({params,}: {  params: { id: string } | Promise<{ id: string }>}) {
   
   const resolvedParams = await params;  
 

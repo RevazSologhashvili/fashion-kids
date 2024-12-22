@@ -11,7 +11,8 @@ import {
 import Link from "next/link";
 
 export default async function DeleteRoute({
-  // @ts-ignore
+  // @ts-expect-error
+
   params,
 }: {
   params: { id: string } | Promise<{ id: string }>
