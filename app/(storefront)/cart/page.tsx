@@ -14,7 +14,7 @@ export default async function CartRoute() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user.id) {
+  if (!user) {
     redirect("/");
   }
 

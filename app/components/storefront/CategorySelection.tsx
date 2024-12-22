@@ -44,7 +44,7 @@ export function CategoriesSelection() {
           />
           <div className="bg-gradient-to-t from-transparent to-blue-500 opacity-40 sm:absolute sm:inset-0" ></div>
           <div className="p-6 flex items-end sm:absolute sm:inset-0">
-            <Link href={'/products/boy'}>
+            <Link href={'/products/boys'}>
                 <h3 className="text-white font-semibold text-xl">Boys Clothings</h3>
                 <p className="mt-1 text-sm text-white">Shop Now</p>
             </Link>
