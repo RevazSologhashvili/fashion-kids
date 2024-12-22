@@ -69,10 +69,12 @@ async function getData(productCategory: string) {
   }
 }
 
-// eslint-disable-next-line
-export default async function CategoriesPage({ params,}: {  params: { name: string } | Promise<{ name: string }>}) {
-    const resolvedParams = await params; 
-  const { name } =  resolvedParams;
+export default async function CategoriesPage({
+    params,
+}: {
+  params: { name: string }
+}) {
+  const { name } = params;
   const { data, title } = await getData(name);
 
   return (
@@ -96,3 +98,4 @@ export default async function CategoriesPage({ params,}: {  params: { name: stri
     </section>
   );
 }
+

@@ -10,14 +10,12 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 
-
-// eslint-disable-next-line
-export default async function DeleteRoute({params,}: {  params: { id: string } | Promise<{ id: string }>}) {
-
-  const resolvedParams = await params;  
-
-  
-  const { id } = resolvedParams;
+export default async function DeleteRoute({
+  params,
+}: {
+  params: { id: string }
+}) {
+  const { id } = params;
 
   return (
     <div className="h-[80vh] w-full flex items-center justify-center">

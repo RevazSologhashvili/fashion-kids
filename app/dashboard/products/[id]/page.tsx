@@ -1,4 +1,3 @@
-
 import { EditForm } from "@/app/components/dashboard/EditForm";
 import prisma from "@/app/lib/db";
 import { notFound } from "next/navigation";
@@ -16,13 +15,12 @@ async function getData(productId: string) {
   return data;
 }
 
-// eslint-disable-next-line
-export default async function EditRoute({params,}: {  params: { id: string } | Promise<{ id: string }>}) {
-
-  const resolvedParams = await params; 
-
-  const { id } = resolvedParams;
-
+export default async function EditRoute({
+  params,
+}: {
+  params: { id: string } 
+}) {
+  const { id } = params;
 
   const data = await getData(id);
 
