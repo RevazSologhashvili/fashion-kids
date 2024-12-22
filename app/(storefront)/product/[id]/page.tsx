@@ -28,6 +28,7 @@ async function getData(productId: string) {
 }
 
 export default async function ProductIdRoute({
+  // @ts-ignore
   params,
 }: {
   params: { id: string } | Promise<{ id: string }>

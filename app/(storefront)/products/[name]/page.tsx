@@ -70,6 +70,7 @@ async function getData(productCategory: string) {
 }
 
 export default async function CategoriesPage({
+    // @ts-ignore
   params,
 }: {
   params: { name: string } | Promise<{ name: string }>
