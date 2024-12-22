@@ -10,13 +10,9 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 
-export default async function DeleteRoute({
-  // @ts-expect-error
 
-  params,
-}: {
-  params: { id: string } | Promise<{ id: string }>
-}) {
+// eslint-disable-next-line
+export default async function DeleteRoute({params,}: {  params: { id: string } | Promise<{ id: string }>}) {
 
   const resolvedParams = await params;  
 
