@@ -1,5 +1,5 @@
 import { deleteBanner } from "@/app/actions";
-import SubmitButtons from "@/app/components/SubmitButtons";
+import {SubmitButtons} from "@/app/components/SubmitButtons";
 import { Button } from "@/components/ui/button";
 import {
   Card,
