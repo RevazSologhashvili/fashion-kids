@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { checkOut, deleteItem } from "@/app/actions";
 import { CheckoutButton, DeleteItems } from "@/app/components/SubmitButtons";
 import { Cart } from "@/app/lib/interfaces";
@@ -17,7 +19,7 @@ export default async function CartRoute() {
     console.log("Got session");
     
     const user = await getUser();
-    
+
     console.log("User result:", user);
 
     if (!user) {
