@@ -6,22 +6,22 @@ import { usePathname } from "next/navigation";
 export const navbarLinks = [
   {
     id: 0,
-    name: "Home",
+    name: "მთავარი",
     href: "/",
   },
   {
     id: 1,
-    name: "All Products",
+    name: "ყველა პროდუქცია",
     href: "/products/all",
   },
   {
     id: 2,
-    name: "Boys",
+    name: "ბიჭის ტანსაცმელი",
     href: "/products/boys",
   },
   {
     id: 3,
-    name: "Girls",
+    name: "გოგოს ტანსაცმელი",
     href: "/products/girls",
   },
 ];
@@ -30,7 +30,7 @@ export function NavbarLinks() {
   const location = usePathname();
 
   return (
-    <div className="hidden md:flex justify-center items-center gap-x-2 ml-10">
+    <div className="flex flex-col items-start md:flex-row justify-center md:items-center gap-x-2 ml-10">
       {navbarLinks.map((item) => (
         <Link
           href={item.href}

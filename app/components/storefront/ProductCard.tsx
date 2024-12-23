@@ -47,12 +47,12 @@ export function ProductCard({ item }: ProductCardProps) {
 
       <div className="flex justify-between items-center mt-2">
         <h2 className="font-semibold text-xl">{item.name}</h2>
-        <h3 className="inline-flex items-center rounded-lg bg-primary/10 px-2 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/10">${item.price}</h3>
+        <h3 className="inline-flex items-center rounded-lg bg-primary/10 px-2 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/10">₾{item.price}</h3>
       </div>
       <p className="text-gray-600 text-sm mt-2 line-clamp-2">{item.description}</p>
 
       <Button asChild className="w-full mt-5">
-        <Link href={`/product/${item.id}`}>Learn More</Link>
+        <Link href={`/product/${item.id}`}></Link>
       </Button>
     </div>
   );

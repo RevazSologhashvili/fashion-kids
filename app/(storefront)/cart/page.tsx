@@ -39,20 +39,19 @@ export default async function CartRoute() {
   });
   return (
     <div className="max-w-2xl mx-auto mt-10 min-h-[55vh]">
-      {!cart || !cart.items? (
+      {!cart || !cart.items.length ? (
         <div className="flex min-h-[400px] flex-col justify-center items-center border border-dashed p-8 text-center rounded-lg mt-20">
           <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
             <ShoppingBag className="w-10 h-10 text-primary" />
           </div>
           <h2 className="mt-6 text-xl font-medium">
-            You dont have any product in your cart
+            ამჟამად თქვენი კალათა ცარიელია
           </h2>
-          <p className="mb-8 mt-2 text-center text-sm leading-6 text-muted-foreground max-w-sm">
-            You currently dont have any products in your shopping cart. Please
-            add some so than you can see them right here.
+          <p className="mb-4 mt-6  text-sm leading-4 text-muted-foreground max-w-md">
+            გადათით პროდუქტების გვერდზე ქვომთ მოცემული ღილაკით
           </p>
           <Button asChild>
-            <Link href={"/"}>Shop Now!</Link>
+            <Link href={"/"}>მთავარ გვერდზე დაბრუნება</Link>
           </Button>
         </div>
       ) : (
