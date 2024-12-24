@@ -17,10 +17,10 @@ export async function Hero() {
             <CarouselContent>
                 {banners.map((banner)=>(
                    <CarouselItem key={banner.id} >
-                    <div  className="relative h-[60vh] lg:h-[80vh]">
+                    <div  className="relative h-[60vh] lg:h-[45vh]">
                         <Image src={banner.imageString} alt={banner.title} fill className="object-cover w-full h-full rounded-xl"/>
-                        <div className="absolute top-6 left-6 bg-opacity-75 bg-black text-white p-6 shadow-lg hover:scale-105 transition-transform rounded-md">
-                            <h1 className="text-xl lg:text-4xl font-bold ">{banner.title}</h1>
+                        <div className="absolute top-6 left-6 bg-opacity-45 bg-black text-white p-3 shadow-lg hover:scale-105 transition-transform rounded-md">
+                            <h1 className="text-md lg:text-xl font-bold ">{banner.title}</h1>
                         </div>
                   </div>
                    </CarouselItem>

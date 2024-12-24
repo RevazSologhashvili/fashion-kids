@@ -30,7 +30,7 @@ export function NavbarLinks() {
   const location = usePathname();
 
   return (
-    <div className="flex flex-col items-start md:flex-row justify-center md:items-center gap-x-2 ml-10">
+    <div className="flex flex-col items-start text-xs md:flex-row justify-center md:items-center gap-x-2 ml-10">
       {navbarLinks.map((item) => (
         <Link
           href={item.href}
@@ -39,7 +39,7 @@ export function NavbarLinks() {
             location === item.href
               ? "bg-muted"
               : "hover:bg-muted hover:bg-opacity-30",
-              "px-2 py-1 rounded-sm group font-medium"
+              "px-3 py-2 rounded-sm group font-medium"
               
           )}
         >

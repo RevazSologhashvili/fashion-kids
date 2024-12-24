@@ -150,7 +150,7 @@ export async function addItem(productId: string) {
   const user = await getUser();
 
   if (!user) {
-    return redirect("/");
+    return redirect("https://kidsfashionshop.kinde.com/auth/cx/_:nav&m:login&psid:0193f7a1bde44f98eb0aea92c3ed1bd1");
   }
 
   const cart: Cart | null = await redis.get(`cart-${user.id}`);
@@ -280,3 +280,4 @@ export async function checkOut() {
     return redirect(session.url as string);
   }
 }
+

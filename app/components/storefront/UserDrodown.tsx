@@ -16,16 +16,17 @@ interface userPorps {
   email: string;
   name: string;
   userImage: string;
+  initials: string
 }
 
-export function UserDrodown({ email, name, userImage }: userPorps) {
+export function UserDrodown({ email, name, userImage, initials }: userPorps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-10 w-10">
             <AvatarImage src={userImage} alt="User image" />
-            <AvatarFallback>{name.slice(0, 3)}</AvatarFallback>
+            <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
