@@ -69,7 +69,7 @@ export function ProductCard({ item }: ProductCardProps) {
               ₾{item.price}
             </h3>
           </div>
-          <p className="text-gray-600 text-sm mt-2 line-clamp-2">
+          <p className="text-gray-600 text-sm mt-2 line-clamp-1">
             {item.description}
           </p>
         </Link>

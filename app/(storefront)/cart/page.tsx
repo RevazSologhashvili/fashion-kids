@@ -57,7 +57,7 @@ export default async function CartRoute() {
       ) : (
         <div className="flex flex-col gap-y-10">
           {cart?.items.map((item) => (
-            <div key={item.id} className="flex">
+            <div key={item.id} className="flex ring-1 ring-inset ring-primary/10 p-2 rounded-lg">
               <div className="w-24 h-24 sm:w-32 sm:h-32 relative">
                 <Image
                   src={item.imageString}
@@ -68,11 +68,11 @@ export default async function CartRoute() {
               </div>
               <div className="ml-5 flex justify-between w-full font-medium">
                 <p>{item.name}</p>
-                <div className="flex flex-col h-full justify-between">
-                  <p>quantity: {item.quantity}</p>
+                <div className="flex flex-col h-full justify-between py-5">
+                  <p>რაოდენობა: {item.quantity}</p>
                   <div className="flex items-center gap-x-2 justify-end">
                     <p>
-                      $
+                      ₾
                       {new Intl.NumberFormat("ge-KA").format(
                         item.price * item.quantity
                       )}
@@ -87,9 +87,9 @@ export default async function CartRoute() {
             </div>
           ))}
           <div className=" mt-5">
-            <div className="flex items-center justify-between font-medium">
-              <p>Subtotal:</p>
-              <p>${new Intl.NumberFormat("ge-KA").format(totalPrice)}</p>
+            <div className="flex items-center justify-between font-medium mb-3">
+              <p>ჯამში გადასახდელი: </p>
+              <p>₾{new Intl.NumberFormat("ge-KA").format(totalPrice)}</p>
             </div>
             <form action={checkOut}>
               <CheckoutButton />

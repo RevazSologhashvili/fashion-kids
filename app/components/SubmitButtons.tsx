@@ -61,9 +61,9 @@ export function DeleteItems() {
   return (
     <>
       {pending ? (
-        <button disabled className="text-primary font-medium text-end">Deleting...</button>
+        <button disabled className="text-primary font-medium text-end">დაიცადეთ...</button>
       ) : (
-        <button type="submit" className="text-primary font-medium text-end">Delete</button>
+        <button type="submit" className="text-primary font-medium text-end">წაშლა</button>
       )}
     </>
   );
